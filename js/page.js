@@ -86,15 +86,17 @@ function createHeader() {
 
 function addHeading(text, tag, hr = null) {
     const headerContainer = document.createElement('div');
-    headerContainer.classList.add(`page-aside__${tag}`)
+    headerContainer.classList.add(`heading__${tag}`)
     ;
     const heading = document.createElement(tag);
-    heading.textContent = text;
+    heading.innerHTML = text;
     headerContainer.appendChild(heading);
 
     if (hr) {
         const hr = document.createElement('hr');
         headerContainer.appendChild(hr);
+        hr.style.marginTop = '5px';
+        heading.style.marginBottom = '0';
     }
 
     return headerContainer
@@ -116,8 +118,9 @@ function addContactLink(href, text) {
     const linkContainer = document.createElement('div');
     linkContainer.classList.add('contact__link');
     const link = document.createElement('a');
-    link.textContent = `${text}`;
+    link.innerHTML = `${text}`;
     link.setAttribute('href', `${href}`);
+    link.setAttribute('target', '_blank');
     linkContainer.appendChild(link);
     return linkContainer;
 }
@@ -141,7 +144,8 @@ function addContacts() {
 
     contactContainer.appendChild(addContact(`../assets/images/icons/mail.png`,
         `mailto: vitaliikryskiv.development@gmail.com`,
-        'vitaliikryskiv.development@gmail.com'));
+        `vitaliikryskiv.development <br>
+        @gmail.com`));
 
     contactContainer.appendChild(addContact(`../assets/images/icons/location.png`,
         `https://www.google.com/maps?q=Kropyvnytskyi'`, 'Kropyvnytskyi'));
@@ -162,13 +166,15 @@ function addProfList(years, profession) {
     const listContainer = document.createElement('div');
     listContainer.classList.add('education__list');
 
-    const ul = document.createElement('ul');
-    ul.innerHTML = years;
+    const head = document.createElement('p');
+    head.innerHTML = years;
 
+    const ul = document.createElement('ul');
     const li = document.createElement('li');
     li.innerHTML = profession;
-
     ul.appendChild(li);
+
+    listContainer.appendChild(head);
     listContainer.appendChild(ul);
 
     return listContainer;
@@ -178,26 +184,36 @@ function addEducation() {
     const educationContainer = document.createElement('div');
     educationContainer.classList.add('education');
     educationContainer.appendChild(addHeading('EDUCATION', 'h1'));
-    educationContainer.appendChild(addHeading('DNEPROPETROVSK\n' +
-        'NATIONAL MINING UNIVERSITY', 'h2'));
-    educationContainer.appendChild(addProfList('2006-2010', 'Bachelor of Engineering\n' +
-        'Mechanics'));
+    educationContainer.appendChild(addHeading(
+        `DNEPROPETROVSK <br>
+        NATIONAL MINING <br>
+         UNIVERSITY`, 'h2'));
+    educationContainer.appendChild(createList([`Bachelor of Engineering
+        <br>Mechanics`], '2006-2010', 'education__list', 'p'));
+    educationContainer.appendChild(createList([`Specialist of Mining
+        <br>Equipment`], '2010-2012', 'education__list', 'p'));
 
     return educationContainer;
 }
 
-function addList(skills, text, className) {
+function createList(text, head, className, tagName) {
     const listContainer = document.createElement('div');
     listContainer.classList.add(`${className}`);
 
-    listContainer.appendChild(addHeading(text, "h2"));
+    if (tagName === 'h1') {
+        listContainer.appendChild(addHeading(head, "h1"));
+    } else {
+        const title = document.createElement('p');
+        title.innerHTML = head;
+        listContainer.appendChild(title);
+    }
 
     const ul = document.createElement('ul');
     ul.classList.add(`${className}__list`);
 
-    skills.forEach(skill => {
+    text.forEach(str => {
         const li = document.createElement('li');
-        li.innerHTML = skill;
+        li.innerHTML = str;
         ul.appendChild(li);
     })
 
@@ -211,30 +227,97 @@ function createAside() {
     aside.classList.add('page-aside');
     aside.appendChild(addContacts());
     aside.appendChild(addEducation());
-    aside.appendChild(addList(softSkills, 'SOFT SKILLS', 'soft-skills'));
+    aside.appendChild(createList(softSkills, 'SOFT SKILLS', 'soft-skills', 'h1'));
     return aside;
 }
 
-function createVerticalHr() {
-    const hrContainer = document.createElement('div');
-    hrContainer.classList.add('vertical-hr');
-
-    const hr = document.createElement('hr');
-
+function createDot() {
     const dot = document.createElement('div');
-    dot.classList.add('vertical-hr__dot');
+    dot.classList.add('vertical-line__dot');
+    return dot;
+}
 
-    hrContainer.appendChild(hr);
-    hrContainer.appendChild(dot);
+function createVertical() {
+    const lineContainer = document.createElement('div');
+    lineContainer.classList.add('vertical-line');
 
-    return hrContainer;
+    lineContainer.appendChild(createDot());
+    lineContainer.appendChild(createDot());
+
+    return lineContainer;
+}
+
+function createProfile() {
+    const profileContainer = document.createElement('div');
+    profileContainer.classList.add('profile');
+    profileContainer.appendChild(addHeading('PROFILE', 'h1', 'hr'));
+
+    const textContainer = document.createElement('div');
+    textContainer.classList.add('profile-text');
+    const text = document.createElement('p');
+    text.innerHTML = 'Novice front-end developer.\n' +
+        'Seeking an opportunity to grow as a Junior Developer and apply my\n' +
+        'knowledge in creating innovative software solutions.\n' +
+        'No professional experience since in the production, but I work on\n' +
+        'collaborative and my own projects, and the results of my work can be\n' +
+        'seen on my GitHub. But I am very interested in web development and\n' +
+        'I plan to develop in this direction.';
+
+    textContainer.appendChild(text);
+    profileContainer.appendChild(textContainer);
+    return profileContainer;
+}
+
+function addWorkExpText() {
+    const textContainer = document.createElement('div');
+    textContainer.classList.add('work-exp__text');
+
+    textContainer.appendChild(addHeading(`<span>Development courses in</span> School++`, 'h2'));
+
+    textContainer.appendChild(createList(['Studies Algorithms and Data structures, Object-Oriented\n' +
+    'Programming (OOP), Basics of Java', 'Creates my versions of such popular collections as ArrayList,\n' +
+    'LinkedList, Stack and Queue'], 'Computer Science', 'work-exp__list', 'p'));
+
+    textContainer.appendChild(createList(['Studies responsible web design, Cascading Style Sheets,\n' +
+    'framework React', 'Work on collaborative and on my own projects', 'Now developing my project trello, that looks like a your day\n' +
+    'task planner or for working'], 'Front-end Developing', 'work-exp__list', 'p'));
+
+
+    return textContainer;
+}
+
+function createWorkExpContent() {
+    const workExpContent = document.createElement('div');
+    workExpContent.classList.add('work-exp__content');
+    workExpContent.appendChild(addHeading('WORK EXPERIENCE', 'h1', 'hr'));
+
+    workExpContent.appendChild(addWorkExpText());
+
+
+    return workExpContent;
+}
+
+function createWorkExp() {
+    const workExpContainer = document.createElement('div');
+    workExpContainer.classList.add('work-exp');
+    workExpContainer.appendChild(createWorkExpContent());
+
+    return workExpContainer;
+}
+
+function createSectionContent() {
+    const contentContainer = document.createElement('div');
+    contentContainer.classList.add('page-section__content');
+    contentContainer.appendChild(createProfile());
+    contentContainer.appendChild(createWorkExp());
+    return contentContainer;
 }
 
 function createSection() {
     const section = document.createElement('section');
-    section.classList.add('section');
-    section.appendChild(addHeading('PROFILE', 'h1', 'hr'));
-    section.appendChild(createVerticalHr())
+    section.classList.add('page-section');
+    section.appendChild(createVertical())
+    section.appendChild(createSectionContent());
     return section;
 }
 

@@ -6,11 +6,29 @@ body {
 }
 
 h1 {
-  font-family: "Libre Baskerville", "Helvetica Neue", "Arial", sans-serif;
+  font-family: "Libre Franklin", "Helvetica Neue", "Arial", sans-serif;
+}
+
+.heading__h1 {
+  letter-spacing: 5px;
+  margin-right: 50px;
+}
+
+.heading__h2 {
+  font-size: 12px;
+}
+.heading__h2 h2 {
+  margin-top: 0;
+  color: #8A7D63;
 }
 
 h2 {
   font-family: "Merriweather", "Helvetica Neue", "Arial", sans-serif;
+}
+
+hr {
+  height: 2px;
+  background-color: #8A7D63;
 }
 
 .container {
@@ -22,6 +40,7 @@ h2 {
   min-height: 100%;
   background-color: white;
   font-family: "ABeeZee", "Helvetica", "Arial", sans-serif;
+  font-size: 18px;
 }
 .container .page-header {
   display: flex;
@@ -139,11 +158,13 @@ h2 {
 .container .main {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: start;
+  width: 100%;
 }
 .container .main .page-aside {
   display: flex;
   flex-direction: column;
+  margin-left: 80px;
 }
 .container .main .page-aside .contacts {
   display: flex;
@@ -152,10 +173,63 @@ h2 {
 .container .main .page-aside .contacts .contact {
   display: flex;
   flex-direction: row;
+  margin-bottom: 20px;
+}
+.container .main .page-aside .contacts .contact .contact__icon {
+  width: 15%;
+}
+.container .main .page-aside .contacts .contact .contact__icon img {
+  max-width: 60%;
+  min-height: auto;
+}
+.container .main .page-aside .contacts .contact .contact__link {
+  display: flex;
+  align-items: center;
+}
+.container .main .page-aside .contacts .contact .contact__link a {
+  text-decoration: none;
+  color: black;
 }
 .container .main .page-aside .education {
   display: flex;
   flex-direction: column;
+}
+.container .main .page-aside .soft-skills__list li {
+  margin-bottom: 10px;
+}
+.container .main .page-section {
+  display: flex;
+  flex-direction: row;
+  margin-left: 80px;
+}
+.container .main .page-section .vertical-line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 70px;
+  background-color: #8A7D63;
+  width: 3px;
+  height: 400px;
+}
+.container .main .page-section .vertical-line .vertical-line__dot {
+  height: 6px;
+  width: 6px;
+  background-color: #8A7D63;
+  border-radius: 50%;
+  margin: 0 0 70px;
+}
+.container .main .page-section .page-section__content {
+  display: flex;
+  flex-direction: column;
+}
+.container .main .page-section .page-section__content .profile .profile-text {
+  margin-right: 120px;
+  text-align: justify;
+  color: #a6a6a6;
+}
+.container .main .page-section .page-section__content .work-exp li {
+  color: #a6a6a6;
 }
 
 /*# sourceMappingURL=main.css.map */

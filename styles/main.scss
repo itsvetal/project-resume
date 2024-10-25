@@ -1,4 +1,6 @@
 @use './mixin';
+@use './variables';
+
 
 body {
   background-color: #2B4074;
@@ -8,11 +10,30 @@ body {
 }
 
 h1 {
-  font-family: "Libre Baskerville", "Helvetica Neue", "Arial", sans-serif;
+  font-family: "Libre Franklin", "Helvetica Neue", "Arial", sans-serif;
+}
+
+.heading__h1 {
+  letter-spacing: 5px;
+  margin-right: 50px;
+}
+
+.heading__h2 {
+  font-size: 12px;
+
+  h2 {
+    margin-top: 0;
+    color: variables.$h2-color;
+  }
 }
 
 h2 {
   font-family: "Merriweather", "Helvetica Neue", "Arial", sans-serif;
+}
+
+hr {
+  height: 2px;
+  background-color: #8A7D63;
 }
 
 .container {
@@ -24,6 +45,7 @@ h2 {
   min-height: 100%;
   background-color: white;
   font-family: "ABeeZee", "Helvetica", "Arial", sans-serif;
+  font-size: 18px;
 
   .page-header {
     display: flex;
@@ -140,11 +162,13 @@ h2 {
   .main {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: start;
+    width: 100%;
 
     .page-aside {
       display: flex;
       flex-direction: column;
+      margin-left: 80px;
 
       .contacts {
         display: flex;
@@ -153,6 +177,26 @@ h2 {
         .contact {
           display: flex;
           flex-direction: row;
+          margin-bottom: 20px;
+
+          .contact__icon {
+            width: 15%;
+          }
+
+          .contact__icon img {
+            max-width: 60%;
+            min-height: auto;
+          }
+
+          .contact__link {
+            display: flex;
+            align-items: center;
+          }
+
+          .contact__link a {
+            text-decoration: none;
+            color: black;
+          }
         }
       }
 
@@ -161,6 +205,59 @@ h2 {
         flex-direction: column;
       }
 
+      .soft-skills__list li {
+        margin-bottom: 10px;
+      }
+
+    }
+
+    .page-section {
+      display: flex;
+      flex-direction: row;
+      margin-left: 80px;
+
+      .vertical-line {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 70px;
+        background-color: #8A7D63;
+        width: 3px;
+        height: 400px;
+
+
+        .vertical-line__dot {
+          height: 6px;
+          width: 6px;
+          background-color: #8A7D63;
+          border-radius: 50%;
+          margin: 0 0 70px;
+        }
+
+      }
+
+      .page-section__content {
+        display: flex;
+        flex-direction: column;
+
+        .profile {
+
+          .profile-text {
+            margin-right: 120px;
+            text-align: justify;
+            color: variables.$text-color;
+          }
+        }
+
+        .work-exp {
+
+
+          li {
+            color: variables.$text-color;
+          }
+        }
+      }
     }
 
   }
