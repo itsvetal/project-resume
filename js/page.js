@@ -1,11 +1,7 @@
 'use strict';
 
-const softSkills = [
-    'Critical Thinking',
-    'Problem solving',
-    'Time management',
-    'Good communication'
-]
+
+import {hardSkills, softSkills} from "./constants.js";
 
 function bgElement(partId) {
     const imgContainer = document.createElement("div");
@@ -17,23 +13,39 @@ function downloadResume() {
     return undefined;
 }
 
-function downloadBtn() {
-    const btn = document.createElement('button');
-    btn.classList.add('nav-bar__btn');
-    btn.innerHTML = 'Download';
-    btn.addEventListener('click', downloadResume());
-    return btn;
+function createLoadButton() {
+    const loadBtn = document.createElement("button");
+    loadBtn.classList.add('load-btn');
+    loadBtn.innerHTML = 'Resume';
+    loadBtn.addEventListener('click', downloadResume());
+    return loadBtn;
+}
+
+function addResumeBtn() {
+    const loadContainer = document.createElement('div');
+    loadContainer.classList.add('load-btn-container');
+    loadContainer.appendChild(createLoadButton())
+
+    return loadContainer;
+}
+
+function addButtons() {
+    const btnContainer = document.createElement("div");
+    btnContainer.classList.add("buttons");
+    btnContainer.appendChild(addResumeBtn())
+
+    return btnContainer;
 }
 
 function createNavBar() {
     const nav = document.createElement('div');
     nav.classList.add('nav-bar');
-    nav.appendChild(bgElement('1'));
-    nav.appendChild(bgElement('2'));
-    nav.appendChild(bgElement('3'));
-    nav.appendChild(bgElement('4'));
-    nav.appendChild(bgElement('5'));
-    nav.appendChild(downloadBtn())
+
+    for (let i = 0; i < 4; i++) {
+        nav.appendChild(bgElement(i + ""));
+    }
+
+    nav.appendChild(addButtons())
     return nav;
 }
 
@@ -97,6 +109,7 @@ function addHeading(text, tag, hr = null) {
         headerContainer.appendChild(hr);
         hr.style.marginTop = '5px';
         heading.style.marginBottom = '0';
+        heading.style.marginTop = '0';
     }
 
     return headerContainer
@@ -144,8 +157,7 @@ function addContacts() {
 
     contactContainer.appendChild(addContact(`../assets/images/icons/mail.png`,
         `mailto: vitaliikryskiv.development@gmail.com`,
-        `vitaliikryskiv.development <br>
-        @gmail.com`));
+        `Gmail`));
 
     contactContainer.appendChild(addContact(`../assets/images/icons/location.png`,
         `https://www.google.com/maps?q=Kropyvnytskyi'`, 'Kropyvnytskyi'));
@@ -160,24 +172,6 @@ function addContacts() {
         `https://itsvetal.github.io/`, 'Portfolio'));
 
     return contactContainer;
-}
-
-function addProfList(years, profession) {
-    const listContainer = document.createElement('div');
-    listContainer.classList.add('education__list');
-
-    const head = document.createElement('p');
-    head.innerHTML = years;
-
-    const ul = document.createElement('ul');
-    const li = document.createElement('li');
-    li.innerHTML = profession;
-    ul.appendChild(li);
-
-    listContainer.appendChild(head);
-    listContainer.appendChild(ul);
-
-    return listContainer;
 }
 
 function addEducation() {
@@ -196,14 +190,14 @@ function addEducation() {
     return educationContainer;
 }
 
-function createList(text, head, className, tagName) {
+function createList(text, head, className, tagName = null) {
     const listContainer = document.createElement('div');
     listContainer.classList.add(`${className}`);
 
     if (tagName === 'h1') {
         listContainer.appendChild(addHeading(head, "h1"));
-    } else {
-        const title = document.createElement('p');
+    } else if (tagName) {
+        const title = document.createElement(tagName);
         title.innerHTML = head;
         listContainer.appendChild(title);
     }
@@ -282,27 +276,51 @@ function addWorkExpText() {
     'framework React', 'Work on collaborative and on my own projects', 'Now developing my project trello, that looks like a your day\n' +
     'task planner or for working'], 'Front-end Developing', 'work-exp__list', 'p'));
 
-
     return textContainer;
 }
 
 function createWorkExpContent() {
     const workExpContent = document.createElement('div');
     workExpContent.classList.add('work-exp__content');
-    workExpContent.appendChild(addHeading('WORK EXPERIENCE', 'h1', 'hr'));
-
+    workExpContent.appendChild(createVertical());
     workExpContent.appendChild(addWorkExpText());
-
-
     return workExpContent;
 }
 
 function createWorkExp() {
     const workExpContainer = document.createElement('div');
     workExpContainer.classList.add('work-exp');
+    workExpContainer.appendChild(addHeading('WORK EXPERIENCE', 'h1', 'hr'));
     workExpContainer.appendChild(createWorkExpContent());
-
     return workExpContainer;
+}
+
+function createHardSkills() {
+    const skillsContainer = document.createElement('div');
+    skillsContainer.classList.add('hard-skills');
+    skillsContainer.appendChild(addHeading('HARD SKILLS', 'h1', 'hr'));
+    skillsContainer.appendChild(createList(hardSkills, "", 'hard-skills'));
+    return skillsContainer;
+}
+
+function createReferenceContent() {
+    const contentContainer = document.createElement('div');
+    contentContainer.classList.add('reference__content');
+
+    contentContainer.appendChild(addHeading('Anton Ivanov', 'p'));
+    contentContainer.appendChild(addContact(`../assets/images/icons/telegram.png`,
+        `https://t.me/VredniyTony`, 'VredniyTony'))
+
+    return contentContainer;
+}
+
+function createReference() {
+    const referenceContainer = document.createElement('div');
+    referenceContainer.classList.add('reference');
+    referenceContainer.appendChild(addHeading('REFERENCE', 'h1', 'hr'));
+    referenceContainer.appendChild(createReferenceContent());
+
+    return referenceContainer;
 }
 
 function createSectionContent() {
@@ -310,13 +328,14 @@ function createSectionContent() {
     contentContainer.classList.add('page-section__content');
     contentContainer.appendChild(createProfile());
     contentContainer.appendChild(createWorkExp());
+    contentContainer.appendChild(createHardSkills());
+    contentContainer.appendChild(createReference())
     return contentContainer;
 }
 
 function createSection() {
     const section = document.createElement('section');
     section.classList.add('page-section');
-    section.appendChild(createVertical())
     section.appendChild(createSectionContent());
     return section;
 }
@@ -329,7 +348,7 @@ function createMain() {
     return mainContainer;
 }
 
-function generatePage() {
+export function generatePage() {
     const container = document.querySelector('.container');
     container.appendChild(createHeader());
     container.appendChild(createMain());

@@ -13,9 +13,22 @@ h1 {
   font-family: "Libre Franklin", "Helvetica Neue", "Arial", sans-serif;
 }
 
+h2 {
+  font-family: "Merriweather", "Helvetica Neue", "Arial", sans-serif;
+}
+
+hr {
+  height: 2px;
+  background-color: #8A7D63;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
 .heading__h1 {
-  letter-spacing: 5px;
-  margin-right: 50px;
+  letter-spacing: 3px;
+  text-wrap: nowrap;
 }
 
 .heading__h2 {
@@ -25,15 +38,6 @@ h1 {
     margin-top: 0;
     color: variables.$h2-color;
   }
-}
-
-h2 {
-  font-family: "Merriweather", "Helvetica Neue", "Arial", sans-serif;
-}
-
-hr {
-  height: 2px;
-  background-color: #8A7D63;
 }
 
 .container {
@@ -50,7 +54,7 @@ hr {
   .page-header {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     position: relative;
     width: 100%;
 
@@ -62,7 +66,7 @@ hr {
       position: relative;
       overflow: hidden;
 
-      #nav-bar__bg-1 {
+      #nav-bar__bg-0 {
         height: 75%;
         width: 100%;
         background-color: #212932;
@@ -71,38 +75,50 @@ hr {
         left: 0;
       }
 
-      #nav-bar__bg-2 {
+      #nav-bar__bg-1 {
         @include mixin.bg-img(80%, #293b51);
       }
 
-      #nav-bar__bg-3 {
+      #nav-bar__bg-2 {
         @include mixin.bg-img(75%, #8a7d63);
       }
 
-      #nav-bar__bg-4 {
+      #nav-bar__bg-3 {
         @include mixin.bg-img(70%, #929ca9);
       }
 
-      #nav-bar__bg-5 {
+      #nav-bar__bg-4 {
         @include mixin.bg-img(65%, #d9dfdb);
       }
 
-      .nav-bar__btn {
+      .buttons {
         position: absolute;
         bottom: 1vw;
         right: 1vw;
-        cursor: pointer;
-        border: none;
-        background-color: transparent;
 
-        &:hover {
-          background-color: #929ca9;
+        .load-btn-container {
+          display: flex;
+          flex-direction: row;
           border-radius: 5px;
-          color: white;
         }
 
-        &:active {
+        .load-btn-container:hover {
+          background-color: #929ca9;
+
+          .load-btn {
+            color: white;
+            cursor: pointer;
+          }
+        }
+
+        .load-btn-container:active {
           transform: translateY(1px);
+        }
+
+        .load-btn {
+          border: none;
+          background-color: transparent;
+          font-size: 16px;
         }
       }
 
@@ -115,24 +131,24 @@ hr {
 
     .page-header__content {
       display: inline-block;
+      margin-left: 380px;
 
 
       .page-header__content__img {
         position: absolute;
         left: 80px;
         top: 100px;
-        width: 20%;
+        max-width: 20%;
       }
 
       .page-header__content__img img {
-        max-width: 100%;
+        max-width: 233px;
         min-height: auto;
       }
 
       .page-header__content__text {
         margin-top: 70px;
         margin-bottom: 80px;
-        padding-left: 10vw;
 
         h1 {
           font-size: 56px;
@@ -165,6 +181,30 @@ hr {
     justify-content: start;
     width: 100%;
 
+    .contact {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 20px;
+
+      .contact__icon {
+        width: 15%;
+      }
+
+      .contact__icon img {
+        max-width: 60%;
+        min-height: auto;
+      }
+
+      .contact__link {
+        display: flex;
+      }
+
+      .contact__link a {
+        text-decoration: none;
+        color: black;
+      }
+    }
+
     .page-aside {
       display: flex;
       flex-direction: column;
@@ -174,68 +214,18 @@ hr {
         display: flex;
         flex-direction: column;
 
-        .contact {
-          display: flex;
-          flex-direction: row;
-          margin-bottom: 20px;
-
-          .contact__icon {
-            width: 15%;
-          }
-
-          .contact__icon img {
-            max-width: 60%;
-            min-height: auto;
-          }
-
-          .contact__link {
-            display: flex;
-            align-items: center;
-          }
-
-          .contact__link a {
-            text-decoration: none;
-            color: black;
-          }
-        }
       }
 
       .education {
         display: flex;
         flex-direction: column;
       }
-
-      .soft-skills__list li {
-        margin-bottom: 10px;
-      }
-
     }
 
     .page-section {
       display: flex;
       flex-direction: row;
-      margin-left: 80px;
-
-      .vertical-line {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        margin-top: 70px;
-        background-color: #8A7D63;
-        width: 3px;
-        height: 400px;
-
-
-        .vertical-line__dot {
-          height: 6px;
-          width: 6px;
-          background-color: #8A7D63;
-          border-radius: 50%;
-          margin: 0 0 70px;
-        }
-
-      }
+      margin: 0 50px 0 90px;
 
       .page-section__content {
         display: flex;
@@ -244,7 +234,7 @@ hr {
         .profile {
 
           .profile-text {
-            margin-right: 120px;
+            margin-right: 80px;
             text-align: justify;
             color: variables.$text-color;
           }
@@ -252,9 +242,66 @@ hr {
 
         .work-exp {
 
-
           li {
             color: variables.$text-color;
+          }
+
+          .work-exp__content {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 20px;
+
+            .vertical-line {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: space-between;
+              background-color: #8A7D63;
+              width: 3px;
+              height: auto;
+
+              .vertical-line__dot {
+                height: 6px;
+                width: 6px;
+                background-color: #8A7D63;
+                border-radius: 50%;
+                margin: 0 0 70px;
+              }
+            }
+
+            .work-exp__text {
+              margin: 0 80px 0 20px;
+              text-align: justify;
+            }
+          }
+        }
+
+        .hard-skills__list {
+          column-count: 3;
+          color: variables.$text-color;
+        }
+
+        .reference {
+
+          .reference__content {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            .contact {
+              align-items: center;
+              margin-left: 20px;
+              margin-bottom: 0;
+
+              .contact__icon {
+                width: 25%;
+                margin-top: 5px;
+              }
+
+              .contact__link a {
+                color: variables.$text-color;
+              }
+            }
           }
         }
       }
