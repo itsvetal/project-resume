@@ -13,26 +13,64 @@ function downloadResume() {
     return undefined;
 }
 
-function createLoadButton() {
+function addLoadButton() {
     const loadBtn = document.createElement("button");
-    loadBtn.classList.add('load-btn');
+    loadBtn.classList.add("resume__btn");
     loadBtn.innerHTML = 'Resume';
     loadBtn.addEventListener('click', downloadResume());
     return loadBtn;
 }
 
+function addLoadIcon() {
+    const icon = document.createElement("img");
+    icon.classList.add('resume__icon');
+    icon.setAttribute('src', '../assets/images/icons/load.png');
+    return icon;
+}
+
 function addResumeBtn() {
     const loadContainer = document.createElement('div');
-    loadContainer.classList.add('load-btn-container');
-    loadContainer.appendChild(createLoadButton())
-
+    loadContainer.classList.add('resume');
+    loadContainer.appendChild(addLoadIcon());
+    loadContainer.appendChild(addLoadButton());
     return loadContainer;
+}
+
+function addPortfolioBtn() {
+    const btn = document.createElement("button");
+    btn.classList.add('portfolio__btn');
+    btn.innerHTML = 'Portfolio'
+
+    return btn;
+}
+
+function addDropDown() {
+    const dropdownContainer = document.createElement("div");
+    dropdownContainer.classList.add('portfolio__dropdown');
+
+    const link = document.createElement("a");
+    link.setAttribute('href', 'https://itsvetal.github.io/di-gi');
+    link.setAttribute('target', '_blank');
+    link.innerHTML = 'Di-Gi';
+    dropdownContainer.appendChild(link);
+
+    return dropdownContainer;
+}
+
+function createPortfolioBtn() {
+    const portfolioContainer = document.createElement("div");
+    portfolioContainer.classList.add('portfolio');
+    portfolioContainer.appendChild(addPortfolioBtn());
+    portfolioContainer.appendChild(addDropDown());
+
+    return portfolioContainer;
 }
 
 function addButtons() {
     const btnContainer = document.createElement("div");
-    btnContainer.classList.add("buttons");
-    btnContainer.appendChild(addResumeBtn())
+    btnContainer.classList.add("nav-buttons");
+    btnContainer.appendChild(createPortfolioBtn());
+    btnContainer.appendChild(addResumeBtn());
 
     return btnContainer;
 }
@@ -41,7 +79,7 @@ function createNavBar() {
     const nav = document.createElement('div');
     nav.classList.add('nav-bar');
 
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 5; i++) {
         nav.appendChild(bgElement(i + ""));
     }
 
@@ -266,7 +304,7 @@ function addWorkExpText() {
     const textContainer = document.createElement('div');
     textContainer.classList.add('work-exp__text');
 
-    textContainer.appendChild(addHeading(`<span>Development courses in</span> School++`, 'h2'));
+    textContainer.appendChild(addHeading(`School++`, 'h2'));
 
     textContainer.appendChild(createList(['Studies Algorithms and Data structures, Object-Oriented\n' +
     'Programming (OOP), Basics of Java', 'Creates my versions of such popular collections as ArrayList,\n' +
@@ -307,7 +345,7 @@ function createReferenceContent() {
     const contentContainer = document.createElement('div');
     contentContainer.classList.add('reference__content');
 
-    contentContainer.appendChild(addHeading('Anton Ivanov', 'p'));
+    contentContainer.appendChild(addHeading('Anton Ivanov', 'h2'));
     contentContainer.appendChild(addContact(`../assets/images/icons/telegram.png`,
         `https://t.me/VredniyTony`, 'VredniyTony'))
 
