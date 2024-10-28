@@ -3,8 +3,7 @@
   width: $width;
   position: absolute;
   top: 0;
-  left: -10vw;
-  //clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
-  transform: skewX(-25deg);
-  background-color: $color;
+  left: 0;
+  clip-path: polygon(0 0, 100% 0, calc(100% - 70px) 100%, 0 100%);
+  background-color: $color
 }

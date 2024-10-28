@@ -16,8 +16,15 @@ function downloadResume() {
 function addLoadButton() {
     const loadBtn = document.createElement("button");
     loadBtn.classList.add("resume__btn");
-    loadBtn.innerHTML = 'Resume';
-    loadBtn.addEventListener('click', downloadResume());
+
+    const link = document.createElement("a");
+    link.setAttribute("href", "../assets/documents/cv.pdf");
+    link.setAttribute("download", "cv_vkryskiv.pdf");
+    link.classList.add("resume__btn");
+    link.innerHTML = 'Resume';
+
+    loadBtn.appendChild(link);
+
     return loadBtn;
 }
 
@@ -40,20 +47,29 @@ function addPortfolioBtn() {
     const btn = document.createElement("button");
     btn.classList.add('portfolio__btn');
     btn.innerHTML = 'Portfolio'
-
     return btn;
+}
+
+function addProject(title, href) {
+    const link = document.createElement("a");
+    link.setAttribute('href', href);
+    link.setAttribute('target', '_blank');
+    link.innerHTML = title;
+    return link;
+}
+
+function addWhiteLine() {
+    const line = document.createElement("div");
+    line.classList.add('white-line');
+    return line;
 }
 
 function addDropDown() {
     const dropdownContainer = document.createElement("div");
-    dropdownContainer.classList.add('portfolio__dropdown');
-
-    const link = document.createElement("a");
-    link.setAttribute('href', 'https://itsvetal.github.io/di-gi');
-    link.setAttribute('target', '_blank');
-    link.innerHTML = 'Di-Gi';
-    dropdownContainer.appendChild(link);
-
+    dropdownContainer.classList.add('portfolio__dropdown', 'hidden');
+    dropdownContainer.appendChild(addProject(`<span>Di-Gi</span>`, 'https://itsvetal.github.io/di-gi'));
+    dropdownContainer.appendChild(addWhiteLine());
+    dropdownContainer.appendChild(addProject(`<span>Table</span>`, 'https://itsvetal.github.io/datatable.github.io/'));
     return dropdownContainer;
 }
 
@@ -62,6 +78,15 @@ function createPortfolioBtn() {
     portfolioContainer.classList.add('portfolio');
     portfolioContainer.appendChild(addPortfolioBtn());
     portfolioContainer.appendChild(addDropDown());
+
+    portfolioContainer.addEventListener('click', () => {
+        const dropDown = document.querySelector('.portfolio__dropdown');
+        const isHidden = dropDown.classList.contains('hidden');
+
+        isHidden
+            ? dropDown.classList.remove('hidden')
+            : dropDown.classList.add('hidden');
+    });
 
     return portfolioContainer;
 }
@@ -386,9 +411,34 @@ function createMain() {
     return mainContainer;
 }
 
+function createFooter() {
+    const footerContainer = document.createElement('div');
+    footerContainer.classList.add('page-footer');
+
+    const copy = document.createElement('div');
+    copy.classList.add('copy');
+    const p1 = document.createElement('span');
+    p1.innerHTML = `&copy 2024 all rights reserved. Contact us:`;
+    copy.appendChild(p1);
+    copy.appendChild(addContactLink(`mailto: vitaliikryskiv.development@gmail.com`,
+        `vitaliikryskiv.development@gmail.com`));
+    footerContainer.appendChild(copy);
+
+
+    const made = document.createElement('div');
+    made.classList.add('made');
+    const p2 = document.createElement('span');
+    p2.innerHTML = `Made with &#10084 in Kropyvnytskyi`;
+    made.appendChild(p2);
+    footerContainer.appendChild(made);
+
+    return footerContainer;
+}
+
 export function generatePage() {
     const container = document.querySelector('.container');
     container.appendChild(createHeader());
     container.appendChild(createMain());
+    container.appendChild(createFooter());
 
 }

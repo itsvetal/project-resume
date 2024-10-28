@@ -7,6 +7,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 100vh;
+  margin: 0;
 }
 
 h1 {
@@ -64,7 +66,6 @@ li {
       width: 100%;
       display: block;
       position: relative;
-      overflow: hidden;
     }
 
     #nav-bar__bg-0 {
@@ -108,7 +109,7 @@ li {
       background-color: #293b51;
       cursor: pointer;
       box-shadow: 7px 7px 7px grey;
-      transform: skewX(-20deg);
+      transform: skewX(-26deg);
       margin-right: 10px;
       width: 50%;
 
@@ -117,27 +118,49 @@ li {
         border: none;
         color: white;
         background-color: transparent;
-        font-size: 16px;
         cursor: pointer;
-        transform: skewX(20deg);
+        font-size: 20px;
+        transform: skewX(26deg);
       }
 
       .portfolio__dropdown {
-        display: none;
         position: absolute;
-        bottom: -20px;
-        background-color: lightgray;
+        display: flex;
+        flex-direction: column;
+        bottom: -50px;
+        left: 0;
+        width: 100%;
+      }
+
+      .portfolio__dropdown a {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        color: white;
+        background-image: linear-gradient(#293b51, #d2d4d9);
+        text-decoration: none;
+        font-size: 20px;
+      }
+
+      .portfolio__dropdown span {
+        transform: skewX(26deg);
+      }
+
+      .white-line {
+        background-color: white;
+        width: 100%;
+        height: 2px;
+      }
+
+      .hidden {
+        opacity: 0;
       }
 
     }
 
     .portfolio:active {
-      transform: translateY(1px) skewX(-20deg);
+      transform: translateY(1px) skewX(-26deg);
       box-shadow: 1px 0 grey;
-
-      .portfolio__dropdown {
-        display: block;
-      }
     }
 
     .resume {
@@ -147,7 +170,7 @@ li {
       background-color: #293b51;
       cursor: pointer;
       box-shadow: 7px 7px 7px grey;
-      transform: skewX(-20deg);
+      transform: skewX(-26deg);
       width: 50%;
 
       .resume__btn {
@@ -155,22 +178,26 @@ li {
         border: none;
         color: white;
         background-color: transparent;
-        font-size: 16px;
+        font-size: 20px;
         cursor: pointer;
-        transform: skewX(20deg);
+      }
+
+      .resume__btn a {
+        transform: skewX(26deg);
+        text-decoration: none;
       }
 
       .resume__icon {
         display: flex;
         width: 20%;
         filter: brightness(0) invert(1);
-        transform: skewX(20deg);
+        transform: skewX(26deg);
       }
 
     }
 
     .resume:active {
-      transform: translateY(1px) skewX(-20deg);
+      transform: translateY(1px) skewX(-26deg);
       box-shadow: 1px 0 grey;
     }
 
@@ -231,6 +258,7 @@ li {
     flex-direction: row;
     justify-content: start;
     width: 100%;
+    flex-grow: 1;
 
     .contact {
       display: flex;
@@ -363,5 +391,79 @@ li {
     }
 
   }
+
+  .page-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    padding:20px 0;
+    width: 100%;
+    background-color: #293b51;
+    color: white;
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+
+  .copy {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+
+    span, link {
+      margin: 0 5px;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container .page-header .nav-buttons {
+    bottom: -50px;
+    right: auto;
+    margin-left: 390px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+
+  .container .main {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .container .main .page-aside {
+    margin: 20px;
+  }
+
+  .container .main .page-section {
+    margin: 0 20px;
+  }
+
+  .container .page-header .page-header__content {
+    margin: unset;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .container .page-header .page-header__content .page-header__content__img {
+    position: unset;
+    max-width: 45%;
+  }
+
+  .container .page-header .page-header__content .page-header__content__img img {
+    max-width: 100%;
+  }
+
+  .container .page-header .page-header__content .page-header__content__text hr {
+    margin-left: auto;
+  }
+
 
 }
