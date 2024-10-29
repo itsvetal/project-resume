@@ -138,8 +138,9 @@ li {
   display: flex;
   flex-direction: column;
   bottom: -50px;
-  left: 0;
+  left: 12px;
   width: 100%;
+  transform: skewX(26deg);
 }
 .container .page-header .portfolio .portfolio__dropdown a {
   display: flex;
@@ -149,9 +150,6 @@ li {
   background-image: linear-gradient(#293b51, #d2d4d9);
   text-decoration: none;
   font-size: 20px;
-}
-.container .page-header .portfolio .portfolio__dropdown span {
-  transform: skewX(26deg);
 }
 .container .page-header .portfolio .white-line {
   background-color: white;
@@ -178,10 +176,12 @@ li {
 .container .page-header .resume .resume__btn {
   display: flex;
   border: none;
-  color: white;
   background-color: transparent;
   font-size: 20px;
   cursor: pointer;
+}
+.container .page-header .resume .resume__btn a {
+  color: white;
 }
 .container .page-header .resume .resume__btn a {
   transform: skewX(26deg);
@@ -438,6 +438,10 @@ li {
   }
   .container .page-header .page-header__content .page-header__content__text h2 {
     font-size: 20px;
+  }
+  .container .page-header .page-header__content .page-header__content__text hr {
+    height: 4px;
+    width: 150px;
   }
   .container .main {
     font-size: 18px;
