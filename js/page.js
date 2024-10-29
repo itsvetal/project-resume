@@ -411,27 +411,47 @@ function createMain() {
     return mainContainer;
 }
 
+function addFooterContact() {
+    const footerContainer = document.createElement('div');
+    footerContainer.classList.add('footer-contact');
+
+    const span = document.createElement('span');
+    span.innerHTML = 'Contact us:';
+    footerContainer.appendChild(span);
+    footerContainer.appendChild(addContactLink(`mailto: vitaliikryskiv.development@gmail.com`,
+        `vitaliikryskiv.development@gmail.com`));
+
+    return footerContainer;
+}
+
+function addCopy() {
+    const copyContainer = document.createElement('div');
+    copyContainer.classList.add('copy');
+
+    const span = document.createElement('span');
+    span.innerHTML = `&copy 2024 all rights reserved.`;
+    copyContainer.appendChild(span);
+
+    copyContainer.appendChild(addFooterContact());
+    return copyContainer;
+}
+
+function addMadeLocation() {
+    const madeContainer = document.createElement('div');
+    madeContainer.classList.add('made');
+
+    const span = document.createElement('span');
+    span.innerHTML = `Made with &#10084 in Kropyvnytskyi`;
+    madeContainer.appendChild(span);
+
+    return madeContainer;
+}
+
 function createFooter() {
     const footerContainer = document.createElement('div');
     footerContainer.classList.add('page-footer');
-
-    const copy = document.createElement('div');
-    copy.classList.add('copy');
-    const p1 = document.createElement('span');
-    p1.innerHTML = `&copy 2024 all rights reserved. Contact us:`;
-    copy.appendChild(p1);
-    copy.appendChild(addContactLink(`mailto: vitaliikryskiv.development@gmail.com`,
-        `vitaliikryskiv.development@gmail.com`));
-    footerContainer.appendChild(copy);
-
-
-    const made = document.createElement('div');
-    made.classList.add('made');
-    const p2 = document.createElement('span');
-    p2.innerHTML = `Made with &#10084 in Kropyvnytskyi`;
-    made.appendChild(p2);
-    footerContainer.appendChild(made);
-
+    footerContainer.appendChild(addCopy());
+    footerContainer.appendChild(addMadeLocation())
     return footerContainer;
 }
 
@@ -440,5 +460,4 @@ export function generatePage() {
     container.appendChild(createHeader());
     container.appendChild(createMain());
     container.appendChild(createFooter());
-
 }
