@@ -226,9 +226,6 @@ function addContacts() {
     contactContainer.appendChild(addContact(`./assets/images/icons/github.png`,
         `https://github.com/itsvetal?tab=repositories`, 'GitHub'));
 
-    contactContainer.appendChild(addContact(`./assets/images/icons/web.png`,
-        `https://itsvetal.github.io/`, 'Portfolio'));
-
     return contactContainer;
 }
 
