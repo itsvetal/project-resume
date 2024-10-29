@@ -216,8 +216,7 @@ li {
   min-height: auto;
 }
 .container .page-header .page-header__content .page-header__content__text {
-  margin-top: 70px;
-  margin-bottom: 80px;
+  margin: 70px 0 80px 40px;
 }
 .container .page-header .page-header__content .page-header__content__text h1 {
   font-size: 56px;
