@@ -9,16 +9,12 @@ function bgElement(partId) {
     return imgContainer
 }
 
-function downloadResume() {
-    return undefined;
-}
-
 function addLoadButton() {
     const loadBtn = document.createElement("button");
     loadBtn.classList.add("resume__btn");
 
     const link = document.createElement("a");
-    link.setAttribute("href", "../assets/documents/cv.pdf");
+    link.setAttribute("href", "./assets/documents/cv.pdf");
     link.setAttribute("download", "cv_vkryskiv.pdf");
     link.innerHTML = 'Download';
 
@@ -30,7 +26,7 @@ function addLoadButton() {
 function addLoadIcon() {
     const icon = document.createElement("img");
     icon.classList.add('resume__icon');
-    icon.setAttribute('src', './../assets/images/icons/load.png');
+    icon.setAttribute('src', './assets/images/icons/load.png');
     return icon;
 }
 
@@ -116,7 +112,7 @@ function AddResumeLogo() {
     imageContainer.classList.add('page-header__content__img');
 
     const img = document.createElement('img');
-    img.setAttribute('src', `./../assets/images/profile/logo.jpg`);
+    img.setAttribute('src', `./assets/images/profile/logo.jpg`);
     img.setAttribute('alt', `logo for resume`);
 
     imageContainer.appendChild(img);
@@ -214,23 +210,23 @@ function addContacts() {
 
     contactContainer.appendChild(addHeading('CONTACT', 'h1'));
 
-    contactContainer.appendChild(addContact(`./../assets/images/icons/phone.png`,
+    contactContainer.appendChild(addContact(`./assets/images/icons/phone.png`,
         `tel:+380683097010`, '+380683097010'));
 
-    contactContainer.appendChild(addContact(`./../assets/images/icons/mail.png`,
+    contactContainer.appendChild(addContact(`./assets/images/icons/mail.png`,
         `mailto: vitaliikryskiv.development@gmail.com`,
         `Gmail`));
 
-    contactContainer.appendChild(addContact(`./../assets/images/icons/location.png`,
+    contactContainer.appendChild(addContact(`./assets/images/icons/location.png`,
         `https://www.google.com/maps?q=Kropyvnytskyi'`, 'Kropyvnytskyi'));
 
-    contactContainer.appendChild(addContact(`./../assets/images/icons/telegram.png`,
+    contactContainer.appendChild(addContact(`./assets/images/icons/telegram.png`,
         `https://t.me/iTs_Vetal`, 'iTs_Vetal'));
 
-    contactContainer.appendChild(addContact(`./../assets/images/icons/github.png`,
+    contactContainer.appendChild(addContact(`./assets/images/icons/github.png`,
         `https://github.com/itsvetal?tab=repositories`, 'GitHub'));
 
-    contactContainer.appendChild(addContact(`./../assets/images/icons/web.png`,
+    contactContainer.appendChild(addContact(`./assets/images/icons/web.png`,
         `https://itsvetal.github.io/`, 'Portfolio'));
 
     return contactContainer;
@@ -370,7 +366,7 @@ function createReferenceContent() {
     contentContainer.classList.add('reference__content');
 
     contentContainer.appendChild(addHeading('Anton Ivanov', 'h2'));
-    contentContainer.appendChild(addContact(`./../assets/images/icons/telegram.png`,
+    contentContainer.appendChild(addContact(`./assets/images/icons/telegram.png`,
         `https://t.me/VredniyTony`, 'VredniyTony'))
 
     return contentContainer;
