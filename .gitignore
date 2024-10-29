@@ -1,5 +1,4 @@
 .idea
-node_modules
-src/assets/.DS_Store
-src/assets/images/.DS_Store
-src/assets/images/icons/.DS_Store
+assets/.DS_Store
+assets/images/.DS_Store
+assets/images/icons/.DS_Store
