@@ -3,3 +3,7 @@ node_modules
 src/assets/.DS_Store
 src/assets/images/.DS_Store
 src/assets/images/icons/.DS_Store
+public/.DS_Store
+public/assets/.DS_Store
+src/.DS_Store
+src/assets/documents/.DS_Store
