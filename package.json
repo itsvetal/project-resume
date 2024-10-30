@@ -10,7 +10,7 @@
     "build:assets": "cp -r src/assets public",
     "build": "npm run build:css && npm run build:js && npm run build:assets && npm run build:html",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "sass --watch src/styles/main.scss styles/main.css"
+    "sass": "sass --watch src/styles/main.scss src/styles/main.css"
   },
   "author": "iTs_Vetal",
   "license": "ISC",
