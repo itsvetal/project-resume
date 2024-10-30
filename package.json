@@ -1,0 +1,20 @@
+{
+  "name": "project-resume",
+  "version": "1.0.0",
+  "description": "Project of my resume",
+  "main": "src/script",
+  "scripts": {
+    "build:css": "sass src/styles/main.scss public/main.css --no-source-map",
+    "build:js": "cp src/script/index.js public/index.js && cp src/script/constants.js public/constants.js",
+    "build:html": "cp src/index.html public/index.html ",
+    "build:assets": "cp -r src/assets public",
+    "build": "npm run build:css && npm run build:js && npm run build:assets && npm run build:html",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch src/styles/main.scss src/styles/main.css"
+  },
+  "author": "iTs_Vetal",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.80.3"
+  }
+}
