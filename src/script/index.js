@@ -173,14 +173,19 @@ function addHeading(text, tag, hr = null) {
     return headerContainer
 }
 
-function addContactIcon(src) {
+function addContactIcon(src, href) {
     const iconContainer = document.createElement('div');
     iconContainer.classList.add('contact__icon');
+
+    const link = document.createElement('a');
+    link.setAttribute('href', href);
+    link.setAttribute('target', 'blank')
 
     const img = document.createElement('img');
     img.setAttribute('src', `${src}`);
 
-    iconContainer.appendChild(img);
+    link.appendChild(img);
+    iconContainer.appendChild(link);
 
     return iconContainer;
 }
@@ -199,7 +204,7 @@ function addContactLink(href, text) {
 function addContact(iconSrc, linkHref, text) {
     const contactContainer = document.createElement('div');
     contactContainer.classList.add('contact');
-    contactContainer.appendChild(addContactIcon(iconSrc));
+    contactContainer.appendChild(addContactIcon(iconSrc, linkHref));
     contactContainer.appendChild(addContactLink(linkHref, text));
     return contactContainer;
 }

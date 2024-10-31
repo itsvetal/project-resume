@@ -173,14 +173,19 @@ function addHeading(text, tag, hr = null) {
     return headerContainer
 }
 
-function addContactIcon(src) {
+function addContactIcon(src, href) {
     const iconContainer = document.createElement('div');
     iconContainer.classList.add('contact__icon');
+
+    const link = document.createElement('a');
+    link.setAttribute('href', href);
+    link.setAttribute('target', 'blank')
 
     const img = document.createElement('img');
     img.setAttribute('src', `${src}`);
 
-    iconContainer.appendChild(img);
+    link.appendChild(img);
+    iconContainer.appendChild(link);
 
     return iconContainer;
 }
@@ -199,7 +204,7 @@ function addContactLink(href, text) {
 function addContact(iconSrc, linkHref, text) {
     const contactContainer = document.createElement('div');
     contactContainer.classList.add('contact');
-    contactContainer.appendChild(addContactIcon(iconSrc));
+    contactContainer.appendChild(addContactIcon(iconSrc, linkHref));
     contactContainer.appendChild(addContactLink(linkHref, text));
     return contactContainer;
 }
@@ -221,10 +226,12 @@ function addContacts() {
         `https://www.google.com/maps?q=Kropyvnytskyi'`, 'Kropyvnytskyi'));
 
     contactContainer.appendChild(addContact(`./assets/images/icons/telegram.png`,
-        `https://t.me/iTs_Vetal`, 'iTs_Vetal'));
+        `https://t.me/iTs_Vetal`, 'Telegram'));
 
     contactContainer.appendChild(addContact(`./assets/images/icons/github.png`,
-        `https://github.com/itsvetal?tab=repositories`, 'GitHub'));
+        `https://github.com/itsvetal?tab=repositories`, 'GitHub repositories'));
+    contactContainer.appendChild(addContact(`./assets/images/icons/linkedin.png`,
+        `https://www.linkedin.com/in/vitalii-kryskiv-6bab21306/`, 'Linkedin profile'));
 
     return contactContainer;
 }
@@ -362,10 +369,11 @@ function createReferenceContent() {
     const contentContainer = document.createElement('div');
     contentContainer.classList.add('reference__content');
 
-    contentContainer.appendChild(addHeading('Anton Ivanov', 'h2'));
+    contentContainer.appendChild(addHeading('Anton Ivanov', 'h2', 'hr'));
+    contentContainer.appendChild(addContact(`./assets/images/icons/linkedin.png`,
+        `https://www.linkedin.com/in/vredniytony/?originalSubdomain=ua/`, 'Linkedin profile'));
     contentContainer.appendChild(addContact(`./assets/images/icons/telegram.png`,
-        `https://t.me/VredniyTony`, 'VredniyTony'))
-
+        `https://t.me/VredniyTony`, 'Telegram'));
     return contentContainer;
 }
 
