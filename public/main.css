@@ -216,8 +216,7 @@ li {
   min-height: auto;
 }
 .container .page-header .page-header__content .page-header__content__text {
-  margin-top: 70px;
-  margin-bottom: 80px;
+  margin: 70px 0 80px 40px;
 }
 .container .page-header .page-header__content .page-header__content__text h1 {
   font-size: 56px;
@@ -280,6 +279,9 @@ li {
   flex-direction: row;
   margin: 0 50px 0 90px;
 }
+.container .main .page-section h2 {
+  font-size: 22px;
+}
 .container .main .page-section .page-section__content {
   display: flex;
   flex-direction: column;
@@ -323,15 +325,18 @@ li {
 }
 .container .main .page-section .page-section__content .reference .reference__content {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  align-items: start;
+  text-wrap: nowrap;
 }
-.container .main .page-section .page-section__content .reference .reference__content h2 {
+.container .main .page-section .page-section__content .reference .reference__content .heading__h2 hr {
+  height: 1px;
+}
+.container .main .page-section .page-section__content .reference .reference__content .heading__h2 h2 {
   margin-top: 10px;
 }
 .container .main .page-section .page-section__content .reference .reference__content .contact {
   align-items: center;
-  margin-left: 20px;
   margin-bottom: 0;
 }
 .container .main .page-section .page-section__content .reference .reference__content .contact .contact__icon {
@@ -447,6 +452,9 @@ li {
     font-size: 18px;
   }
   .container .main h1 {
+    font-size: 18px;
+  }
+  .container .main .page-section h2 {
     font-size: 18px;
   }
 }
