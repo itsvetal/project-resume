@@ -318,15 +318,10 @@ li {
           .profile-text {
             margin-right: 80px;
             text-align: justify;
-            color: variables.$text-color;
           }
         }
 
         .work-exp {
-
-          li {
-            color: variables.$text-color;
-          }
 
           .work-exp__content {
             display: flex;
@@ -360,7 +355,6 @@ li {
 
         .hard-skills__list {
           column-count: 3;
-          color: variables.$text-color;
         }
 
         .reference {
@@ -383,16 +377,14 @@ li {
             }
 
             .contact {
+              display: flex;
               align-items: center;
+              justify-content: space-around;
               margin-bottom: 0;
 
               .contact__icon {
                 width: 25%;
                 margin-top: 5px;
-              }
-
-              .contact__link a {
-                color: variables.$text-color;
               }
             }
           }

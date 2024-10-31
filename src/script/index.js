@@ -334,8 +334,8 @@ function addWorkExpText() {
     'Programming (OOP), Basics of Java', 'Creates my versions of such popular collections as ArrayList,\n' +
     'LinkedList, Stack and Queue'], 'Computer Science', 'work-exp__list', 'p'));
 
-    textContainer.appendChild(createList(['Studies responsible web design, Cascading Style Sheets,\n' +
-    'framework React', 'Work on collaborative and on my own projects', 'Now developing my project trello, that looks like a your day\n' +
+    textContainer.appendChild(createList(['Studies responsible web design, Cascading Style Sheets(CSS, SASS),\n' +
+    'TypeScript(Strict mode), React (functional and class style)', 'Now developing my project trello, that looks like a your day\n' +
     'task planner or for working'], 'Front-end Developing', 'work-exp__list', 'p'));
 
     return textContainer;

@@ -289,10 +289,6 @@ li {
 .container .main .page-section .page-section__content .profile .profile-text {
   margin-right: 80px;
   text-align: justify;
-  color: #a6a6a6;
-}
-.container .main .page-section .page-section__content .work-exp li {
-  color: #a6a6a6;
 }
 .container .main .page-section .page-section__content .work-exp .work-exp__content {
   display: flex;
@@ -321,7 +317,6 @@ li {
 }
 .container .main .page-section .page-section__content .hard-skills__list {
   column-count: 3;
-  color: #a6a6a6;
 }
 .container .main .page-section .page-section__content .reference .reference__content {
   display: flex;
@@ -336,15 +331,14 @@ li {
   margin-top: 10px;
 }
 .container .main .page-section .page-section__content .reference .reference__content .contact {
+  display: flex;
   align-items: center;
+  justify-content: space-around;
   margin-bottom: 0;
 }
 .container .main .page-section .page-section__content .reference .reference__content .contact .contact__icon {
   width: 25%;
   margin-top: 5px;
-}
-.container .main .page-section .page-section__content .reference .reference__content .contact .contact__link a {
-  color: #a6a6a6;
 }
 .container .page-footer {
   display: flex;
