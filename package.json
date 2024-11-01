@@ -1,6 +1,6 @@
 {
   "name": "project-resume",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Project of my resume",
   "main": "src/script",
   "scripts": {
