@@ -25,3 +25,7 @@ npm run build
 
 Will compile, autoprefix sass to css and output assets directory and all other files to ./public.<br>
 After building for production you can take the `./public` directory and deploy it.
+
+## Resume
+
+You can see result by link: [My resume](https://itsvetal.github.io/project-resume/)
