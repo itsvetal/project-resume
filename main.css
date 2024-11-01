@@ -258,7 +258,7 @@ li {
   display: flex;
 }
 .container .main .contact .contact__link a {
-  text-decoration: none;
+  //text-decoration: none;
   color: black;
 }
 .container .main .page-aside {
