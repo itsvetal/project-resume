@@ -258,7 +258,6 @@ li {
   display: flex;
 }
 .container .main .contact .contact__link a {
-  //text-decoration: none;
   color: black;
 }
 .container .main .page-aside {
@@ -369,7 +368,6 @@ li {
   margin: 0 5px;
 }
 .container .copy a {
-  text-decoration: none;
   color: white;
 }
 

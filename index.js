@@ -311,13 +311,14 @@ function createProfile() {
     const textContainer = document.createElement('div');
     textContainer.classList.add('profile-text');
     const text = document.createElement('p');
-    text.innerHTML = 'Novice front-end developer.\n' +
-        'Seeking an opportunity to grow as a Junior Developer and apply my\n' +
-        'knowledge in creating innovative software solutions.\n' +
-        'No professional experience since in the production, but I work on\n' +
-        'collaborative and my own projects, and the results of my work can be\n' +
-        'seen on my GitHub. But I am very interested in web development and\n' +
-        'I plan to develop in this direction.';
+    text.innerHTML = 'Hello! My name is Vitalii. I am looking' +
+        ' for development opportunities as a Front-end Developer. I have a confident ' +
+        'knowledge of HTML, CSS (SASS, including those familiar with the Tailwind,' +
+        ' Bootstrap libraries), JavaScript + TypeScript, React. There is experience' +
+        ' with Git, developer tools, debugger and package managers. I am quite' +
+        ' self-organized, stress-resistant, non-toxic and communicate well with people.' +
+        ' There is a great desire to learn, to master new technologies. I will be very' +
+        ' happy to work in your company';
 
     textContainer.appendChild(text);
     profileContainer.appendChild(textContainer);
@@ -334,8 +335,7 @@ function addWorkExpText() {
     'Programming (OOP), Basics of Java', 'Creates my versions of such popular collections as ArrayList,\n' +
     'LinkedList, Stack and Queue'], 'Computer Science', 'work-exp__list', 'p'));
 
-    textContainer.appendChild(createList(['Studies responsible web design, Cascading Style Sheets(CSS, SASS),\n' +
-    'TypeScript(Strict mode), React (functional and class style)', 'Now developing my project trello, that looks like a your day\n' +
+    textContainer.appendChild(createList(['Studies responsible web design, Cascading Style Sheets(CSS, SASS), TypeScript(Strict mode) + React (functional and class style) + Redux', 'Now i\'m developing my project the clone of the trello, that looks like a your day\n' +
     'task planner or for working'], 'Front-end Developing', 'work-exp__list', 'p'));
 
     return textContainer;
