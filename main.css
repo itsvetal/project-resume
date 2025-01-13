@@ -75,7 +75,7 @@ li {
   position: absolute;
   top: 0;
   left: 0;
-  clip-path: polygon(0 0, 100% 0, calc(100% - 70px) 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 100px) 100%, 0 100%);
   background-color: #293b51;
 }
 .container .page-header #nav-bar__bg-2 {
@@ -84,7 +84,7 @@ li {
   position: absolute;
   top: 0;
   left: 0;
-  clip-path: polygon(0 0, 100% 0, calc(100% - 70px) 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 100px) 100%, 0 100%);
   background-color: #8a7d63;
 }
 .container .page-header #nav-bar__bg-3 {
@@ -93,7 +93,7 @@ li {
   position: absolute;
   top: 0;
   left: 0;
-  clip-path: polygon(0 0, 100% 0, calc(100% - 70px) 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 100px) 100%, 0 100%);
   background-color: #929ca9;
 }
 .container .page-header #nav-bar__bg-4 {
@@ -102,7 +102,7 @@ li {
   position: absolute;
   top: 0;
   left: 0;
-  clip-path: polygon(0 0, 100% 0, calc(100% - 70px) 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 100px) 100%, 0 100%);
   background-color: #d9dfdb;
 }
 .container .page-header .nav-buttons {
@@ -137,8 +137,8 @@ li {
   position: absolute;
   display: flex;
   flex-direction: column;
-  bottom: -50px;
-  left: 12px;
+  bottom: -75px;
+  left: 19px;
   width: 100%;
   transform: skewX(26deg);
 }
