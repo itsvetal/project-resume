@@ -62,9 +62,11 @@ function addWhiteLine() {
 function addDropDown() {
     const dropdownContainer = document.createElement("div");
     dropdownContainer.classList.add('portfolio__dropdown', 'hidden');
-    dropdownContainer.appendChild(addProject(`<span>Di-Gi</span>`, 'https://itsvetal.github.io/di-gi'));
+    dropdownContainer.appendChild(addProject(`<span>Project Di-Gi</span>`, 'https://itsvetal.github.io/di-gi'));
     dropdownContainer.appendChild(addWhiteLine());
-    dropdownContainer.appendChild(addProject(`<span>Table</span>`, 'https://itsvetal.github.io/datatable.github.io/'));
+    dropdownContainer.appendChild(addProject(`<span>My Resume</span>`, 'https://itsvetal.github.io/project-resume'));
+    dropdownContainer.appendChild(addWhiteLine());
+    dropdownContainer.appendChild(addProject(`<span>Project Trello</span>`, 'https://itsvetal.github.io/trello'));
     return dropdownContainer;
 }
 
@@ -311,13 +313,13 @@ function createProfile() {
     const textContainer = document.createElement('div');
     textContainer.classList.add('profile-text');
     const text = document.createElement('p');
-    text.innerHTML = 'Hello! My name is Vitalii. I am looking for development opportunities' +
-        ' as a Front-end Developer. I have a confident knowledge of HTML, CSS (SASS,' +
-        ' including those familiar with the Tailwind, Bootstrap libraries), JavaScript' +
-        ' + TypeScript, React. There is experience with Git, developer tools, debugger and' +
-        ' package managers. I am quite self-organized, stress-resistant, non-toxic and' +
-        ' communicate well with people. There is a great desire to learn, to master new' +
-        ' technologies. I will be very happy to work in your company';
+    text.innerHTML = `I am motivated and purposeful Junior Front-end Developer with basic
+    experience in creating modern web applications. Strong knowledge of HTML,+
+        CSS, JavaScript, TypeScript, and React. Focused on developing convenient,
+        adaptive interfaces that meet modern UX/UI standards. Quick to learn, open
+    to new technologies and challenges. I am seeking an opportunity to join a
+    professional team to expand expertise and contribute to the success of
+    company projects.`;
 
     textContainer.appendChild(text);
     profileContainer.appendChild(textContainer);
@@ -335,8 +337,20 @@ function addWorkExpText() {
     'LinkedList, Stack and Queue'], 'Computer Science', 'work-exp__list', 'p'));
 
     textContainer.appendChild(createList(['Studies responsible web design, Cascading Style Sheets(CSS, SASS),' +
-    ' TypeScript(Strict mode) + React (functional and class style) + Redux', 'Now I\'m developing my project the clone of the trello, that looks like a your day\n' +
-    'task planner'], 'Front-end Developing', 'work-exp__list', 'p'));
+    ' TypeScript(Strict mode) + React (functional and class style) + Redux', 'Now I\'m developing my project the clone of the trello'], 'Front-end Developing', 'work-exp__list', 'p'));
+
+    textContainer.appendChild(addHeading(`Projects`, 'h2'));
+
+    textContainer.appendChild(createList(['Technologies: HTML, CSS, JavaScript.', 'Features: responsive design, interactive components.', 'GitHub: https://github.com/itsvetal/di-gi '], 'Project Di-Gi', 'work-exp__list', 'p'));
+
+    textContainer.appendChild(createList(['Technologies: HTML, CSS, SASS, JavaScript.', 'Features: page generation using JavaScript, adaptive design, interactive\n' +
+    'components.', 'GitHub: https://github.com/itsvetal/project-resume'], 'Project Resume', 'work-exp__list', 'p'));
+
+    textContainer.appendChild(createList(['The project is gradually developed, the design is updated and new features are added', 'Technologies: HTML, CSS, SASS, TypeScript, React, Rect Router, Redux Toolkit, Axios,\n' +
+    'Eslint, Husky.', 'Features: SPA application on React, state management using react hooks\n' +
+    'and Redux Toolkit, dynamic routing.', 'GitHub: https://github.com/itsvetal/trello ', 'Other projects you can see in my GitHub: https://github.com/itsvetal?\n' +
+    'tab=repositories'], 'Project Trello clone', 'work-exp__list', 'p'));
+
 
     return textContainer;
 }
