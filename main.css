@@ -29,12 +29,26 @@ li {
   text-wrap: nowrap;
 }
 
+.contacts__head h1 {
+  margin-top: 0;
+}
+
 .heading__h2 {
   font-size: 12px;
 }
 .heading__h2 h2 {
   margin-top: 0;
   color: #8A7D63;
+}
+
+.work-exp__role h2 {
+  color: unset !important;
+  font-size: 20px !important;
+}
+
+.work-exp__project h2 {
+  color: unset !important;
+  font-size: 20px !important;
 }
 
 .container {
@@ -110,7 +124,7 @@ li {
   display: flex;
   flex-direction: row;
   bottom: 5px;
-  right: 1vw;
+  right: 12px;
 }
 .container .page-header .portfolio {
   display: flex;
@@ -171,7 +185,7 @@ li {
   cursor: pointer;
   box-shadow: 7px 7px 7px grey;
   transform: skewX(-26deg);
-  width: 50%;
+  width: 100%;
 }
 .container .page-header .resume .resume__btn {
   display: flex;
@@ -286,7 +300,7 @@ li {
   flex-direction: column;
 }
 .container .main .page-section .page-section__content .profile .profile-text {
-  margin-right: 80px;
+  margin-right: 20px;
   text-align: justify;
 }
 .container .main .page-section .page-section__content .work-exp .work-exp__content {
@@ -311,7 +325,7 @@ li {
   margin: 0 0 70px;
 }
 .container .main .page-section .page-section__content .work-exp .work-exp__content .work-exp__text {
-  margin: 0 80px 0 20px;
+  margin: 0 20px 0 20px;
   text-align: justify;
 }
 .container .main .page-section .page-section__content .hard-skills__list {
