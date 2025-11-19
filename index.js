@@ -234,7 +234,7 @@ function addContacts() {
         `tel:+380683097010`, '+380683097010'));
 
     contactContainer.appendChild(addContact(`./assets/images/icons/mail.png`,
-        `mailto: vitaliikryskiv@gmail.com`,
+        `mailto: vitaliykriskiv@gmail.com`,
         `vitaliikryskiv@gmail.com`));
 
     contactContainer.appendChild(addContact(`./assets/images/icons/location.png`,
