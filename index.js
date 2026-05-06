@@ -156,7 +156,7 @@ function createHeader() {
     return header;
 }
 
-function addHeading(text, tag, interval  = '', hr = null, isAside = false) {
+function addHeading(text, tag, interval = '', hr = null, isAside = false) {
     const headerContainer = document.createElement('div');
     headerContainer.classList.add(`heading__${tag}`);
     const heading = document.createElement(tag);
@@ -255,7 +255,7 @@ function addContacts() {
 function addEducation() {
     const educationContainer = document.createElement('div');
     educationContainer.classList.add('education');
-    educationContainer.appendChild(addHeading('EDUCATION', 'h1', '',  false,true));
+    educationContainer.appendChild(addHeading('EDUCATION', 'h1', '', false, true));
     educationContainer.appendChild(addHeading(
         `DNEPROPETROVSK <br>
         NATIONAL MINING <br>
@@ -273,7 +273,7 @@ function createList(text, head, className, tagName = null) {
     listContainer.classList.add(`${className}`);
 
     if (tagName === 'h1') {
-        listContainer.appendChild(addHeading(head, "h1", '',  false, true));
+        listContainer.appendChild(addHeading(head, "h1", '', false, true));
     } else if (tagName && head) {
         const title = document.createElement(tagName);
         title.style.marginBottom = '10px';
@@ -360,12 +360,39 @@ function addProjectTitle(title) {
     return projectTitle;
 }
 
-function addWorkExpText() {
+function addWorkExpAfina() {
     const textContainer = document.createElement('div');
     textContainer.classList.add('work-exp__text');
 
-    textContainer.appendChild(addHeading(`Doroshenko Agency`, 'h2', 'November 2024 - Present'));
+    textContainer.appendChild(addHeading('Private company (Contract)', 'h2', 'February 2026 - April 2026'));
+    textContainer.appendChild(addRoleTitle('Full-stack Developer / WordPress (Roots Stack)'));
 
+    const intro = document.createElement('p');
+    intro.classList.add('work-exp__intro');
+    intro.innerHTML = 'Developed 15+ landing pages and WordPress-based project using a\n' +
+        'modern stack: Bedrock + Sage + Acorn with a full development cycle:\n' +
+        'from layout implementation to deployment and CMS customization.';
+    textContainer.appendChild(intro);
+
+    textContainer.appendChild(addProjectTitle('Landing pages:'));
+    textContainer.appendChild(createList([
+        'PHP', 'JavaScript', 'HTML', 'CSS'
+    ], 'Tech Stack', 'work-exp__list', 'h3'));
+    textContainer.appendChild(createList([
+        'Built landing pages using PHP, JavaScript, HTML, and CSS',
+        'Configured SEO fundamentals (meta tags, sitemap.xml, robots.txt) to improve indexing',
+        'Deployed landings to hosting environments and configured domains',
+        'Set up and configured Nginx (SSL certificates, redirects, domain routing)',
+    ], 'Responsibilities:', 'work-exp__list', 'h3'));
+
+    return textContainer;
+}
+
+function addWorkExpDoroshenko() {
+    const textContainer = document.createElement('div');
+    textContainer.classList.add('work-exp__text');
+
+    textContainer.appendChild(addHeading(`Doroshenko Agency`, 'h2', 'November 2024 - December 2025'));
     textContainer.appendChild(addRoleTitle('Full-Stack Developer'));
 
     textContainer.appendChild(addProjectTitle('American project  MoveUp -  Internet platform for US  Trucking company:'));
@@ -373,7 +400,7 @@ function addWorkExpText() {
         'TypeScript, React.js, React Context, React Query, Redux, Lodash',
         'Tailwind CSS, SASS, Material UI, Swiper.js, Axios, Git, ESLint',
         'PHP, Laravel, Inertia.js,  Moonshine, Tiny Mce, Docker, MySQL'
-    ], 'Tech Stack:', 'work-exp__list', 'p'));
+    ], 'Tech Stack:', 'work-exp__list', 'h3'));
     textContainer.appendChild(createList([
         'Optimized database queries, reducing the number of SQL requests by over 95%, which significantly improved system performance and loading speed',
         'Developed a custom admin panel using Moonshine, for the platform portal',
@@ -383,14 +410,14 @@ function addWorkExpText() {
         'Redesigned key UI components to improve usability and visual consistency',
         'Developed React components and integrated them via Inertia.js',
         'Actively cooperated with the team to deliver stable production updates'
-    ], 'Responsibilities:', 'work-exp__list', 'p'));
+    ], 'Responsibilities:', 'work-exp__list', 'h3'));
 
     textContainer.appendChild(addProjectTitle('Project  DentPro - Internet store for dental company:'));
     textContainer.appendChild(createList([
         'TypeScript, React.js, Next.js, SSR (Server Side Rendering), Redux',
         'Swiper.js, Tailwind CSS, REST API, Tawk API, Axios, Git, ESLint, Prettier, Husky,',
         'PHP, Laravel / Socialite / Sanctum,  Moonshine, Tiny Mce, Spatie, Docker, MySQL'
-    ], 'Tech Stack:', 'work-exp__list', 'p'));
+    ], 'Tech Stack:', 'work-exp__list', 'h3'));
     textContainer.appendChild(createList([
         'Built a website from scratch using Next.js + Laravel',
         'Configured Dynamic routing',
@@ -403,7 +430,7 @@ function addWorkExpText() {
         'Implemented authentication via Laravel Sanctum and social login (Google, Facebook)',
         'Integrated Tawk.to chat for real-time client communication',
         'Created a fully responsive UI with Tailwind CSS, ensuring pixel-perfect adaptation'
-    ], 'Responsibilities:', 'work-exp__list', 'p'));
+    ], 'Responsibilities:', 'work-exp__list', 'h3'));
 
     textContainer.appendChild(addProjectTitle('Project  Glass Manufacturing Company Store:'));
     textContainer.appendChild(createList([
@@ -415,13 +442,13 @@ function addWorkExpText() {
         'Refactored Laravel models and relationships, improving data consistency',
         'Improved UX/UI',
         'Adjusted product cards and fixed issue with product filters',
-    ], 'Responsibilities:', 'work-exp__list', 'p'));
+    ], 'Responsibilities:', 'work-exp__list', 'h3'));
 
     textContainer.appendChild(addHeading(`Top Izdato - Intership`, 'h2', 'August 2024 – November 2024'));
     textContainer.appendChild(addRoleTitle('Front-End Intern / Junior Developer'));
     textContainer.appendChild(createList(['Created an admin panel for lead management with CRM integration using React, Redux Toolkit, and REST API.',
         'Improved project structure and routing', 'Styled the UI with support for dynamic color themes (CSS, SCSS)',
-    'Gained experience working in a collaborative environment and version control with Git'], '', 'work-exp__list', 'p'));
+        'Gained experience working in a collaborative environment and version control with Git'], '', 'work-exp__list', 'p'));
 
 
     textContainer.appendChild(addHeading(`Developer courses at School++`, 'h2', 'February 2024 - August 2024'));
@@ -448,14 +475,15 @@ function createWorkExpContent() {
     const workExpContent = document.createElement('div');
     workExpContent.classList.add('work-exp__content');
     workExpContent.appendChild(createVertical());
-    workExpContent.appendChild(addWorkExpText());
+    workExpContent.appendChild(addWorkExpDoroshenko());
+    workExpContent.appendChild(addWorkExpAfina());
     return workExpContent;
 }
 
 function createWorkExp() {
     const workExpContainer = document.createElement('div');
     workExpContainer.classList.add('work-exp');
-    workExpContainer.appendChild(addHeading('WORK EXPERIENCE', 'h1', '',  'hr'));
+    workExpContainer.appendChild(addHeading('WORK EXPERIENCE', 'h1', '', 'hr'));
     workExpContainer.appendChild(createWorkExpContent());
     return workExpContainer;
 }
@@ -482,7 +510,7 @@ function createReferenceContent(name, linkedInTitle, linkedInLink, telegramTitle
 
 function createReference() {
     const wrapper = document.createElement('div');
-    wrapper.appendChild(addHeading('REFERENCE', 'h1', '',  'hr'));
+    wrapper.appendChild(addHeading('REFERENCE', 'h1', '', 'hr'));
 
     const referenceContainer = document.createElement('div');
     referenceContainer.style.display = 'flex';
