@@ -332,7 +332,7 @@ function createVertical() {
 function createProfile() {
     const profileContainer = document.createElement('div');
     profileContainer.classList.add('profile');
-    profileContainer.appendChild(addHeading('PROFILE', 'h1', '', 'hr'));
+    profileContainer.appendChild(addHeading('PROFILE', 'h2', '', 'hr'));
 
     const textContainer = document.createElement('div');
     textContainer.classList.add('profile-text');
@@ -484,7 +484,7 @@ function createWorkExpContent() {
 function createWorkExp() {
     const workExpContainer = document.createElement('div');
     workExpContainer.classList.add('work-exp');
-    workExpContainer.appendChild(addHeading('WORK EXPERIENCE', 'h1', '', 'hr'));
+    workExpContainer.appendChild(addHeading('WORK EXPERIENCE', 'h2', '', 'hr'));
     workExpContainer.appendChild(createWorkExpContent());
     return workExpContainer;
 }
@@ -511,7 +511,7 @@ function createReferenceContent(name, linkedInTitle, linkedInLink, telegramTitle
 
 function createReference() {
     const wrapper = document.createElement('div');
-    wrapper.appendChild(addHeading('REFERENCE', 'h1', '', 'hr'));
+    wrapper.appendChild(addHeading('REFERENCE', 'h2', '', 'hr'));
 
     const referenceContainer = document.createElement('div');
     referenceContainer.style.display = 'flex';
