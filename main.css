@@ -476,6 +476,10 @@ li {
   .container .page-header .page-header__content .page-header__content__text h2 {
     font-size: 20px;
   }
+  .container .page-header .page-header__content .page-header__content__text h3 {
+    font-size: 20px;
+    margin-inline: 22px;
+  }
   .container .page-header .page-header__content .page-header__content__text hr {
     height: 4px;
     width: 150px;
