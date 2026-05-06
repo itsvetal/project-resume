@@ -25,6 +25,7 @@ li {
 }
 
 .heading__h1 {
+  font-size: 16px;
   letter-spacing: 3px;
   text-wrap: nowrap;
 }
