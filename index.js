@@ -360,10 +360,11 @@ function addProjectTitle(title) {
     return projectTitle;
 }
 
-function addWorkExpAfina() {
+function addWorkExp() {
     const textContainer = document.createElement('div');
     textContainer.classList.add('work-exp__text');
 
+    //AFINA WORDPRESS (ROOTS STACK)
     textContainer.appendChild(addHeading('Private company (Contract)', 'h2', 'February 2026 - April 2026'));
     textContainer.appendChild(addRoleTitle('Full-stack Developer / WordPress (Roots Stack)'));
 
@@ -385,13 +386,8 @@ function addWorkExpAfina() {
         'Set up and configured Nginx (SSL certificates, redirects, domain routing)',
     ], 'Responsibilities:', 'work-exp__list', 'h3'));
 
-    return textContainer;
-}
 
-function addWorkExpDoroshenko() {
-    const textContainer = document.createElement('div');
-    textContainer.classList.add('work-exp__text');
-
+    //DOROSHENKO AGENCY
     textContainer.appendChild(addHeading(`Doroshenko Agency`, 'h2', 'November 2024 - December 2025'));
     textContainer.appendChild(addRoleTitle('Full-Stack Developer'));
 
@@ -436,7 +432,7 @@ function addWorkExpDoroshenko() {
     textContainer.appendChild(createList([
         'JavaScript, React.js, Next.js, Axios',
         'Laravel, Moonshine, Spatie,',
-    ], 'Tech Stack:', 'work-exp__list', 'p'));
+    ], 'Tech Stack:', 'work-exp__list', 'h3'));
     textContainer.appendChild(createList([
         'Reworked and improved admin panel on Moonshine',
         'Refactored Laravel models and relationships, improving data consistency',
@@ -444,29 +440,31 @@ function addWorkExpDoroshenko() {
         'Adjusted product cards and fixed issue with product filters',
     ], 'Responsibilities:', 'work-exp__list', 'h3'));
 
+    //TOPIZDATO
     textContainer.appendChild(addHeading(`Top Izdato - Intership`, 'h2', 'August 2024 – November 2024'));
     textContainer.appendChild(addRoleTitle('Front-End Intern / Junior Developer'));
     textContainer.appendChild(createList(['Created an admin panel for lead management with CRM integration using React, Redux Toolkit, and REST API.',
         'Improved project structure and routing', 'Styled the UI with support for dynamic color themes (CSS, SCSS)',
-        'Gained experience working in a collaborative environment and version control with Git'], '', 'work-exp__list', 'p'));
+        'Gained experience working in a collaborative environment and version control with Git'], '', 'work-exp__list', 'h3'));
 
 
+    //SCHOOL ++
     textContainer.appendChild(addHeading(`Developer courses at School++`, 'h2', 'February 2024 - August 2024'));
     textContainer.appendChild(createList(['Studies Algorithms and Data structures, Object-Oriented\n' +
     'Programming (OOP), Basics of Java', 'Creates my versions of such popular collections as ArrayList,\n' +
     'LinkedList, Stack and Queue'], 'Computer Science', 'work-exp__list', 'p'));
     textContainer.appendChild(createList(['Studies responsible web design, Cascading Style Sheets(CSS, SASS),' +
-    ' TypeScript(Strict mode) + React (functional and class style) + Redux', 'Now I\'m developing my project the clone of the trello'], 'Front-end Developing', 'work-exp__list', 'p'));
+    ' TypeScript(Strict mode) + React (functional and class style) + Redux', 'Now I\'m developing my project the clone of the trello'], 'Front-end Developing', 'work-exp__list', 'h3'));
 
 
     textContainer.appendChild(addHeading(`School projects`, 'h2'));
     textContainer.appendChild(createList(['Tech Stack: HTML, CSS, JavaScript.', 'Features: responsive design, interactive components.', 'GitHub: https://github.com/itsvetal/di-gi '], 'Project Di-Gi', 'work-exp__list', 'p'));
     textContainer.appendChild(createList(['Tech Stack: HTML, CSS, SASS, JavaScript.', 'Features: page generation using JavaScript, adaptive design, interactive\n' +
-    'components.', 'GitHub: https://github.com/itsvetal/project-resume'], 'Project Resume', 'work-exp__list', 'p'));
+    'components.', 'GitHub: https://github.com/itsvetal/project-resume'], 'Project Resume', 'work-exp__list', 'h3'));
     textContainer.appendChild(createList(['The project is gradually developed, the design is updated and new features are added', 'Technologies: HTML, CSS, SASS, TypeScript, React, Rect Router, Redux Toolkit, Axios,\n' +
     'Eslint, Husky.', 'Features: SPA application on React, state management using react hooks\n' +
     'and Redux Toolkit, dynamic routing.', 'GitHub: https://github.com/itsvetal/trello ', 'Other projects you can see in my GitHub: https://github.com/itsvetal?\n' +
-    'tab=repositories'], 'Project Trello clone', 'work-exp__list', 'p'));
+    'tab=repositories'], 'Project Trello clone', 'work-exp__list', 'h3'));
 
     return textContainer;
 }
@@ -475,8 +473,7 @@ function createWorkExpContent() {
     const workExpContent = document.createElement('div');
     workExpContent.classList.add('work-exp__content');
     workExpContent.appendChild(createVertical());
-    workExpContent.appendChild(addWorkExpDoroshenko());
-    workExpContent.appendChild(addWorkExpAfina());
+    workExpContent.appendChild(addWorkExp());
     return workExpContent;
 }
 
