@@ -386,12 +386,26 @@ function addWorkExp() {
         'Set up and configured Nginx (SSL certificates, redirects, domain routing)',
     ], 'Responsibilities:', 'work-exp__list', 'h3'));
 
+    textContainer.appendChild(addProjectTitle('WordPress (Roots Stack) project'));
+    textContainer.appendChild(createList([
+        'PHP', 'WordPress', 'Bedrock', 'Sage', 'Acorn', 'Alpine.js', 'Ajax', 'JavaScript',
+        'HTML5', 'CSS3', 'Tailwind', 'Swiper', 'ACF'
+    ], 'Tech Stack', 'work-exp__list', 'h3'));
+    textContainer.appendChild(createList([
+        'Developed a full project using Bedrock, Sage, and Acorn',
+        'Applied clean architecture principles: DTO (Data Transfer Objects), Service layer, Repository pattern',
+    'Used Blade templating engine and reusable Blade components',
+    'Integrated Advanced Custom Fields (ACF) without relying on Gutenberg/block editor',
+    'Customized WordPress admin panel for project-specific needs',
+    'Optimized WordPress by removing unnecessary styles, scripts and default features'
+    ], 'Responsibilities:', 'work-exp__list', 'h3'));
+
 
     //DOROSHENKO AGENCY
     textContainer.appendChild(addHeading(`Doroshenko Agency`, 'h2', 'November 2024 - December 2025'));
     textContainer.appendChild(addRoleTitle('Full-Stack Developer'));
 
-    textContainer.appendChild(addProjectTitle('American project  MoveUp -  Internet platform for US  Trucking company:'));
+    textContainer.appendChild(addProjectTitle('American project  MoveUp -  Internet platform for US  Trucking company'));
     textContainer.appendChild(createList([
         'TypeScript, React.js, React Context, React Query, Redux, Lodash',
         'Tailwind CSS, SASS, Material UI, Swiper.js, Axios, Git, ESLint',
@@ -408,7 +422,7 @@ function addWorkExp() {
         'Actively cooperated with the team to deliver stable production updates'
     ], 'Responsibilities:', 'work-exp__list', 'h3'));
 
-    textContainer.appendChild(addProjectTitle('Project  DentPro - Internet store for dental company:'));
+    textContainer.appendChild(addProjectTitle('Project  DentPro - Internet store for dental company'));
     textContainer.appendChild(createList([
         'TypeScript, React.js, Next.js, SSR (Server Side Rendering), Redux',
         'Swiper.js, Tailwind CSS, REST API, Tawk API, Axios, Git, ESLint, Prettier, Husky,',
@@ -428,7 +442,7 @@ function addWorkExp() {
         'Created a fully responsive UI with Tailwind CSS, ensuring pixel-perfect adaptation'
     ], 'Responsibilities:', 'work-exp__list', 'h3'));
 
-    textContainer.appendChild(addProjectTitle('Project  Glass Manufacturing Company Store:'));
+    textContainer.appendChild(addProjectTitle('Project  Glass Manufacturing Company Store'));
     textContainer.appendChild(createList([
         'JavaScript, React.js, Next.js, Axios',
         'Laravel, Moonshine, Spatie,',
@@ -455,16 +469,6 @@ function addWorkExp() {
     'LinkedList, Stack and Queue'], 'Computer Science', 'work-exp__list', 'p'));
     textContainer.appendChild(createList(['Studies responsible web design, Cascading Style Sheets(CSS, SASS),' +
     ' TypeScript(Strict mode) + React (functional and class style) + Redux', 'Now I\'m developing my project the clone of the trello'], 'Front-end Developing', 'work-exp__list', 'h3'));
-
-
-    textContainer.appendChild(addHeading(`School projects`, 'h2'));
-    textContainer.appendChild(createList(['Tech Stack: HTML, CSS, JavaScript.', 'Features: responsive design, interactive components.', 'GitHub: https://github.com/itsvetal/di-gi '], 'Project Di-Gi', 'work-exp__list', 'p'));
-    textContainer.appendChild(createList(['Tech Stack: HTML, CSS, SASS, JavaScript.', 'Features: page generation using JavaScript, adaptive design, interactive\n' +
-    'components.', 'GitHub: https://github.com/itsvetal/project-resume'], 'Project Resume', 'work-exp__list', 'h3'));
-    textContainer.appendChild(createList(['The project is gradually developed, the design is updated and new features are added', 'Technologies: HTML, CSS, SASS, TypeScript, React, Rect Router, Redux Toolkit, Axios,\n' +
-    'Eslint, Husky.', 'Features: SPA application on React, state management using react hooks\n' +
-    'and Redux Toolkit, dynamic routing.', 'GitHub: https://github.com/itsvetal/trello ', 'Other projects you can see in my GitHub: https://github.com/itsvetal?\n' +
-    'tab=repositories'], 'Project Trello clone', 'work-exp__list', 'h3'));
 
     return textContainer;
 }
