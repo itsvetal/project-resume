@@ -383,7 +383,7 @@ function addWorkExp() {
 
     textContainer.appendChild(addProjectTitle('Landing pages'));
     textContainer.appendChild(createList([
-        'PHP', 'JavaScript', 'HTML', 'CSS'
+        'PHP, JavaScript, HTML, CSS'
     ], 'Tech Stack:', 'work-exp__list', 'h4'));
     textContainer.appendChild(createList([
         'Built landing pages using PHP, JavaScript, HTML, and CSS',
@@ -394,8 +394,7 @@ function addWorkExp() {
 
     textContainer.appendChild(addProjectTitle('WordPress (Roots Stack) project'));
     textContainer.appendChild(createList([
-        'PHP', 'WordPress', 'Bedrock', 'Sage', 'Acorn', 'Alpine.js', 'Ajax', 'JavaScript',
-        'HTML5', 'CSS3', 'Tailwind', 'Swiper', 'ACF'
+        'PHP, WordPress, Bedrock, Sage, Acorn, Alpine.js, Ajax', 'JavaScript,HTML5, CSS3, Tailwind, Swiper, ACF'
     ], 'Tech Stack', 'work-exp__list', 'h4'));
     textContainer.appendChild(createList([
         'Developed a full project using Bedrock, Sage, and Acorn',
