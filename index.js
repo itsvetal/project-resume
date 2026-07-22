@@ -341,9 +341,11 @@ function createProfile() {
     const textContainer = document.createElement('div');
     textContainer.classList.add('profile-text');
     const text = document.createElement('p');
-    text.innerHTML = `Full-Stack Developer with hands-on experience in developing and maintaining modern web applications using React, Next.js, Laravel and WordPress.
-Experienced in building both frontend and backend parts of projects — from adaptive UI to backend architecture and admin panels.
-I enjoy solving complex problems, improving performance, and creating reliable, scalable applications that meet business goals.`;
+    text.innerHTML = `Full-Stack Developer with commercial experience building modern web applications
+using React, Next.js, Laravel, and WordPress. Skilled in developing scalable frontend
+and backend solutions, REST APIs, CMS integrations, and responsive user
+interfaces. Passionate about clean architecture, performance optimization, and
+continuous learning.`;
 
     textContainer.appendChild(text);
     profileContainer.appendChild(textContainer);
@@ -369,7 +371,7 @@ function addWorkExp() {
     textContainer.classList.add('work-exp__text');
 
     //AFINA WORDPRESS (ROOTS STACK)
-    textContainer.appendChild(addHeading('Private company (Contract)', 'h3', 'February 2026 - April 2026'));
+    textContainer.appendChild(addHeading('Private company (Contract)', 'h3', 'February 2026 - May 2026'));
     textContainer.appendChild(addRoleTitle('Full-stack Developer / WordPress (Roots Stack)'));
 
     const intro = document.createElement('p');
