@@ -171,7 +171,7 @@ li {
   cursor: pointer;
   box-shadow: 7px 7px 7px grey;
   transform: skewX(-26deg);
-  width: 50%;
+  width: 100%;
 }
 .container .page-header .resume .resume__btn {
   display: flex;
